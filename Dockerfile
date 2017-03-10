@@ -52,7 +52,7 @@ ENV PROJECT_WORKDIR="/app" \
 ## Create entrypoint
 COPY docker-composer-entrypoint /usr/local/bin/docker-composer-entrypoint
 RUN chmod 755 /usr/local/bin/docker-composer-entrypoint
-ENTRYPOINT ["docker-composer-entrypoint"]
+ENTRYPOINT ["/usr/local/bin/docker-composer-entrypoint"]
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
